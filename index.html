@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Movimento | Fisioterapia</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #F8FAFC;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      background: #F8FAFC;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #0D9488;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
+      gap: 24px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #475569;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      color: #0D9488;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #16A34A;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #15803d;
+      transform: translateY(-2px);
+    }
+
+    .btn-secundario {
+      background: transparent;
+      color: #0D9488;
+      border: 1px solid #0D9488;
+    }
+
+    .btn-secundario:hover {
+      background: #ecfeff;
+      color: #0D9488;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+      padding: 70px 0;
+    }
+
+    .etiqueta {
+      color: #0D9488;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #475569;
+      margin-bottom: 28px;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .foto {
+      min-height: 430px;
+      border-radius: 8px;
+      background-image: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=85");
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+    }
+
+    .numeros {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .numeros strong {
+      display: block;
+      color: #0D9488;
+      font-size: 28px;
+    }
+
+    .numeros span {
+      color: #475569;
+      font-size: 14px;
+    }
+
+    section {
+      padding: 65px 0;
+    }
+
+    .branco {
+      background: white;
+    }
+
+    h2 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .texto {
+      color: #475569;
+      font-size: 17px;
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #F8FAFC;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 28px;
+    }
+
+    .icone {
+      width: 46px;
+      height: 46px;
+      background: #0D9488;
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #475569;
+    }
+
+    .beneficios {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .lista-beneficios {
+      display: grid;
+      gap: 15px;
+    }
+
+    .beneficio {
+      background: white;
+      padding: 22px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .beneficio h3 {
+      color: #0D9488;
+      margin-bottom: 8px;
+    }
+
+    .beneficio p {
+      color: #475569;
+    }
+
+    .depoimento {
+      background: #0D9488;
+      color: white;
+      text-align: center;
+    }
+
+    .depoimento p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 26px;
+    }
+
+    .depoimento strong {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .contato {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .info p {
+      color: #475569;
+      margin-bottom: 10px;
+    }
+
+    .info strong {
+      color: #0f172a;
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 25px 0;
+      color: #475569;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    footer strong {
+      color: #0D9488;
+    }
+
+    @media (max-width: 850px) {
+      .menu {
+        display: none;
+      }
+
+      .hero,
+      .beneficios,
+      .contato {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .foto {
+        min-height: 320px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .botoes {
+        flex-direction: column;
+      }
+
+      .numeros {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <div class="logo">Clínica Movimento</div>
+
+      <div class="menu">
+        <a href="#servicos">Serviços</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+      <a class="btn" href="https://wa.me/5500000000000" target="_blank">
+        Agendar pelo WhatsApp
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="container hero">
+      <div>
+        <p class="etiqueta">Fisioterapia em São Paulo</p>
+
+        <h1>Recupere seus movimentos com cuidado profissional.</h1>
+
+        <p>
+          Tratamentos personalizados para dor, lesões, reabilitação pós-cirúrgica
+          e melhora da mobilidade. Agende uma avaliação e receba um plano feito
+          para sua rotina.
+        </p>
+
+        <div class="botoes">
+          <a class="btn" href="https://wa.me/5500000000000" target="_blank">
+            Quero agendar uma avaliação
+          </a>
+
+          <a class="btn btn-secundario" href="#servicos">
+            Conhecer tratamentos
+          </a>
+        </div>
+
+        <div class="numeros">
+          <div>
+            <strong>8+</strong>
+            <span>anos de experiência</span>
+          </div>
+
+          <div>
+            <strong>1.200+</strong>
+            <span>pacientes atendidos</span>
+          </div>
+
+          <div>
+            <strong>4.9</strong>
+            <span>avaliação no Google</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="foto"></div>
+    </section>
+
+    <section id="servicos" class="branco">
+      <div class="container">
+        <p class="etiqueta">Tratamentos</p>
+        <h2>Serviços para cada fase da sua recuperação</h2>
+
+        <p class="texto">
+          Atendimento individualizado com foco em aliviar sintomas, recuperar função
+          e prevenir novas lesões.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icone">+</div>
+            <h3>Fisioterapia Ortopédica</h3>
+            <p>
+              Tratamento para dores na coluna, joelho, ombro, quadril,
+              tendinites e lesões musculares.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icone">✓</div>
+            <h3>Reabilitação Pós-Cirúrgica</h3>
+            <p>
+              Plano de recuperação para ganho de força, mobilidade e retorno
+              seguro às atividades.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icone">•</div>
+            <h3>Fisioterapia Esportiva</h3>
+            <p>
+              Prevenção e tratamento de lesões para atletas amadores e profissionais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios">
+      <div class="container beneficios">
+        <div>
+          <p class="etiqueta">Por que escolher</p>
+          <h2>Atendimento claro, próximo e baseado na sua evolução</h2>
+
+          <p class="texto">
+            Um site profissional precisa passar confiança, mostrar localização,
+            explicar os tratamentos e facilitar o agendamento pelo WhatsApp.
+          </p>
+        </div>
+
+        <div class="lista-beneficios">
+          <div class="beneficio">
+            <h3>Avaliação completa</h3>
+            <p>Entendemos sua dor, rotina e objetivos antes de iniciar o tratamento.</p>
+          </div>
+
+          <div class="beneficio">
+            <h3>Plano personalizado</h3>
+            <p>Cada sessão é ajustada de acordo com sua resposta e progresso.</p>
+          </div>
+
+          <div class="beneficio">
+            <h3>Agendamento fácil</h3>
+            <p>Contato direto pelo WhatsApp para tirar dúvidas e marcar sua avaliação.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="depoimento">
+      <div class="container">
+        <p>
+          “Depois de poucas semanas, voltei a treinar com segurança e sem aquela dor
+          constante no joelho. O atendimento foi cuidadoso do início ao fim.”
+        </p>
+
+        <strong>Mariana Souza, paciente</strong>
+      </div>
+    </section>
+
+    <section id="contato" class="branco">
+      <div class="container contato">
+        <div class="info">
+          <p class="etiqueta">Contato</p>
+          <h2>Agende sua avaliação</h2>
+
+          <p>
+            Atendimento de segunda a sexta, das 8h às 19h. Envie uma mensagem
+            e nossa equipe retorna com os horários disponíveis.
+          </p>
+
+          <br>
+
+          <p><strong>Endereço:</strong> Rua Exemplo, 123 - Centro</p>
+          <p><strong>Telefone:</strong> (00) 00000-0000</p>
+          <p><strong>Google:</strong> Clínica Movimento Fisioterapia</p>
+
+          <br>
+
+          <a class="btn" href="https://wa.me/5500000000000" target="_blank">
+            Chamar no WhatsApp agora
+          </a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps?q=S%C3%A3o%20Paulo%20SP&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Clínica Movimento. Todos os direitos reservados.</p>
+      <strong>Fisioterapia, reabilitação e qualidade de vida.</strong>
+    </div>
+  </footer>
+
+</body>
+</html>
